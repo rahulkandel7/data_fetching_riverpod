@@ -34,7 +34,12 @@ class Homepage extends ConsumerWidget {
                     const Divider(),
               );
             },
-            error: (e, s) => Text(e.toString()),
+            error: (e, s) => Center(
+              child: Text(
+                e.toString(),
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+            ),
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),

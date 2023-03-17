@@ -19,7 +19,6 @@ class DioException implements Exception {
   String? message;
 
   String _handleError(int statuscode, dynamic error) {
-    print(statuscode);
     switch (statuscode) {
       case 400:
         return error["message"] ?? error["success"] ?? "Error";

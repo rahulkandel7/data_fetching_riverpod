@@ -11,8 +11,8 @@ class UserController extends StateNotifier<AsyncValue<List<User>>> {
   fetchUser() async {
     final result = await _userRepository.fetchUser();
     result.fold(
-        (error) =>
-            state = AsyncError(error, StackTrace.fromString(error.message)),
+        (error) => state =
+            AsyncError(error.message, StackTrace.fromString(error.message)),
         (success) => state = AsyncData(success));
   }
 }
