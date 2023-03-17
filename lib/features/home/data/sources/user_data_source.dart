@@ -17,7 +17,7 @@ class UserDataSourceImpl extends UserDataSource {
   UserDataSourceImpl(this._apiService);
   @override
   Future<List<User>> fetchUser() async {
-    final result = await _apiService.getData(endpoint: '/user');
+    final result = await _apiService.getData(endpoint: '/users');
     final users = result as List<dynamic>;
     return users.map((user) => User.fromMap(user)).toList();
   }
